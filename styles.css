@@ -1,0 +1,365 @@
+:root {
+    --primary-color: #4a6bff;
+    --secondary-color: #7986cb;
+    --accent-color: #00d0ff;
+    --text-color: #e0e0e0;
+    --dark-bg: #121212;
+    --darker-bg: #0a0a0a;
+    --card-bg: #1e1e1e;
+    --header-height: 70px;
+    --sidebar-width: 250px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--darker-bg);
+    color: white;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    margin-right: 12px;
+    color: var(--accent-color);
+}
+
+.main-content {
+    display: flex;
+    margin-top: var(--header-height);
+    flex: 1;
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--darker-bg);
+    padding: 2rem 1rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    height: calc(100vh - var(--header-height));
+    overflow-y: auto;
+    z-index: 90;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.sidebar-item {
+    margin-bottom: 0.5rem;
+    padding: 0.8rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sidebar-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--accent-color);
+}
+
+.sidebar-item.active {
+    background-color: rgba(74, 107, 255, 0.2);
+    color: var(--accent-color);
+    border-left: 3px solid var(--accent-color);
+}
+
+.content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding: 2rem;
+}
+
+.content-header {
+    margin-bottom: 2rem;
+}
+
+.content-title {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+    font-weight: 300;
+}
+
+.uni-highlight {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.content-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #bbb;
+    font-weight: 300;
+}
+
+.content-description {
+    color: #aaa;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.swagger-section {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#swagger-ui {
+    margin-top: 1rem;
+}
+
+.swagger-ui {
+    color: var(--text-color);
+}
+
+.swagger-ui .opblock {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.swagger-ui .opblock .opblock-summary {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.swagger-ui .opblock .opblock-summary-method {
+    border-radius: 4px;
+}
+
+.swagger-ui .btn.execute {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.swagger-ui .btn.execute:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    
+    .content {
+        margin-left: 0;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+}
+
+footer {
+    background-color: var(--darker-bg);
+    color: #888;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-info {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.info-card {
+    flex: 1;
+    min-width: 250px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.info-card p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.university-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.swagger-ui .opblock-tag {
+    color: #e0e0e0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.swagger-ui .opblock-tag:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.swagger-ui .opblock .opblock-summary-operation-id,
+.swagger-ui .opblock .opblock-summary-path,
+.swagger-ui .opblock .opblock-summary-path__deprecated,
+.swagger-ui .opblock .opblock-summary-description {
+    color: #ddd !important;
+}
+
+.swagger-ui .opblock .opblock-section-header {
+    background: rgba(0, 0, 0, 0.2) !important;
+    box-shadow: none !important;
+}
+
+.swagger-ui input[type=text], 
+.swagger-ui select {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    color: #ddd !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.swagger-ui textarea {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    color: #ddd !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.swagger-ui .tab li {
+    color: #ddd !important;
+}
+
+.swagger-ui .response-control-media-type__accept-message {
+    color: #bbb !important;
+}
+
+.swagger-ui .model-box {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.swagger-ui section.models {
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.swagger-ui section.models .model-container {
+    background-color: transparent !important;
+}
+
+.swagger-ui .model-title {
+    color: #ddd !important;
+}
+
+.swagger-ui .parameter__name,
+.swagger-ui .parameter__type {
+    color: #ddd !important;
+}
+
+.swagger-ui table tbody tr td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.swagger-ui .response-col_status {
+    color: #ddd !important;
+}
+
+.swagger-ui .response-col_description__inner p {
+    color: #bbb !important;
+}
+
+.swagger-ui .prop-format {
+    color: #aaa !important;
+}
+
+.swagger-ui .markdown p {
+    color: #ddd !important;
+}
+
+.swagger-ui .info .title {
+    color: var(--accent-color) !important;
+}
+
+.swagger-ui .scheme-container {
+    background-color: var(--card-bg) !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.swagger-ui .auth-wrapper .authorize {
+    color: #ddd !important;
+}
+
+.swagger-ui .btn {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border-color: var(--primary-color) !important;
+}
+
+.swagger-ui .btn:hover {
+    background-color: var(--secondary-color) !important;
+}
+
+.swagger-ui select {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    color: #ddd !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.university-badge {
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px rgba(74, 107, 255, 0.5);
+    }
+    to {
+        box-shadow: 0 0 15px rgba(0, 208, 255, 0.8);
+    }
+}
